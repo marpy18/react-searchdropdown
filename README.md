@@ -7,15 +7,15 @@ A simple dropdown with a search input field
 
 Install using npm:
 ```sh
-npm install --save @quipugmbh/react-searchdropdown
+npm install --save react-searchdropdown
 ```
 
 
 ## Example Usage
 
 ```jsx
-import Searchdropdown from '@quipugmbh/react-searchdropdown'
-import '@quipugmbh/react-searchdropdown/react-searchdropdown.css'
+import Searchdropdown from 'react-searchdropdown'
+import 'react-searchdropdown/react-searchdropdown.css'
 ...
 
 render: function() {
