@@ -2,7 +2,7 @@
   "name": "react-searchdropdown",
   "version": "0.1.0",
   "description": "A simple dropdown with a search input field",
-  "main": "index.jsx",
+  "main": "./dist/index.js",
   "directories": {
     "example": "example"
   },
@@ -16,10 +16,8 @@
     "url": "git+https://github.com/gocedoko/react-searchdropdown.git"
   },
   "files": [
-    "DateTimeCombo.jsx",
-    "react-datetimecombo.css",
-    "datetime.png",
-    "src",
+    "index.jsx",
+    "react-searchdropdown.css",
     "dist"
   ],
   "peerDependencies": {
