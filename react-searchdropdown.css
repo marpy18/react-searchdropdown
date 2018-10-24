@@ -1,0 +1,109 @@
+.Searchdropdown-root {
+  position: relative;
+  width: 200px;
+  border: 1px solid  rgba(0, 0, 0, 0.7);
+}
+
+.Searchdropdown-control {
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: #333;
+  cursor: default;
+  outline: none;
+  transition: all 200ms ease;
+}
+
+.Searchdropdown-control > input{
+  padding: 5px;
+}
+
+.Searchdropdown-control:hover {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.Searchdropdown-arrow {
+  border: 0px hidden #fff;
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  padding: 7px;
+  right: 5px;
+  top: 0px;
+  font-size:85%;
+  cursor:pointer;
+  color:#00000070;
+}
+
+.Searchdropdown-clear {
+  border: 0px hidden #fff;
+  display: block;
+  position: absolute;
+  right: 25px;
+  top: -1px;
+  padding: 7px;
+  font-size:70%;
+  cursor:pointer;
+  color:#00000070;
+}
+
+.Searchdropdown-menu {
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  margin-top: -1px;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1000;
+  -webkit-overflow-scrolling: touch;
+}
+
+.Searchdropdown-menu .Searchdropdown-group > .Searchdropdown-title{
+  padding: 8px 10px;
+  color: rgba(51, 51, 51, 1);
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.Searchdropdown-option {
+  box-sizing: border-box;
+  color: rgba(51, 51, 51, 0.8);
+  cursor: pointer;
+  display: block;
+  padding: 8px 10px;
+}
+
+.Searchdropdown-option:last-child {
+  border-bottom-right-radius: 2px;
+   border-bottom-left-radius: 2px;
+}
+
+.Searchdropdown-option:hover {
+  background-color: #f2f9fc;
+  color: #333;
+}
+
+.Searchdropdown-option.is-selected {
+  background-color: #f2f9fc;
+  color: #333;
+}
+
+.Searchdropdown-noresults {
+  box-sizing: border-box;
+  color: #ccc;
+  cursor: default;
+  display: block;
+  padding: 8px 10px;
+}
+
+
+.Searchdropdown-placeholder{
+  margin-top: 0!important;
+  border: 0px hidden #000;
+}

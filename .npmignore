@@ -1,0 +1,9 @@
+# Folders
+node_modules
+example
+
+# Files
+*~
+.DS_Store
+npm-debug.log
+webpack.config.js
