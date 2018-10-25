@@ -18,6 +18,7 @@
 
 .Searchdropdown-control > input{
   padding: 5px;
+  outline: none;
 }
 
 .Searchdropdown-control:hover {
