@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import onClickOutside from 'react-onclickoutside';
 
-const DEFAULT_PLACEHOLDER_STRING = 'Select...'
+const DEFAULT_PLACEHOLDER_STRING = 'Wybierz...'
 
 class Searchdropdown extends Component {
   constructor (props) {
@@ -97,12 +97,22 @@ class Searchdropdown extends Component {
   onUserInputChange(e) {
     const value = e.target === null ? e : e.target.value
     const lowerCaseTypedValue = value.toLowerCase() || ''
+    let splitValues = lowerCaseTypedValue.split(" ");
+    let filteredOptions = this.state.options;
+    if(value){
+     filteredOptions =  this.state.options.filter( o => {
+       splitValues.forEach(splitValue => {
+         if(o.lowerCaseLabel.indexOf(splitValue) === -1){
+            return false;
+         }
+       })
+       return true;
+     });
+    }
     this.setState({ 
       typedValue: value,
       lowerCaseTypedValue: lowerCaseTypedValue,
-      filteredOptions: value
-          ? this.state.options.filter(o => o.lowerCaseLabel.indexOf(lowerCaseTypedValue) != -1)
-          : this.state.options,
+      filteredOptions,
       isOpen: true
     })
   }
