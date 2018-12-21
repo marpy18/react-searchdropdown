@@ -101,12 +101,13 @@ class Searchdropdown extends Component {
     let filteredOptions = this.state.options;
     if(value){
      filteredOptions =  this.state.options.filter( o => {
+       let found = true;
        splitValues.forEach(splitValue => {
-         if(o.lowerCaseLabel.indexOf(splitValue) === -1){
-            return false;
+         if(o.lowerCaseLabel.indexOf(splitValue) === -1 && splitValue !== " " && splitValue !== ""){
+            found = false;
          }
        })
-       return true;
+	return found;
      });
     }
     this.setState({ 
@@ -124,6 +125,8 @@ class Searchdropdown extends Component {
       this.setValue(this.state.options[(this.state.selected.index - 1)], true)
     else if ( e.which === 40 && this.state.selected.index < this.state.options.length - 1) //down
       this.setValue(this.state.options[(this.state.selected.index + 1)], true)
+    else if (e.which === 13 && this.props.onEnter != null)
+      this.props.onEnter(this.state.filteredOptions);
   }
 
   render () {
