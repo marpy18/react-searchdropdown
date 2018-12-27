@@ -19,6 +19,7 @@ class Searchdropdown extends Component {
     this.setValue = this.setValue.bind(this)
     this.onUserInputChange = this.onUserInputChange.bind(this)
     this.onKeyDown = this.onKeyDown.bind(this)
+    this.addValueToList = this.addValueToList.bind(this)
   }
 
   componentWillReceiveProps (newProps) {
@@ -49,6 +50,12 @@ class Searchdropdown extends Component {
     }, this.fireChangeEvent(newSelected))
   }
 
+  addValueToList(valueObj){
+    if(this.props.addValueToList != null){
+      this.props.addValueToList(valueObj);
+    }
+  }
+
   fireChangeEvent (newSelected) {
     if (newSelected !== this.state.selected && this.props.onChange)
       this.props.onChange(newSelected)
@@ -67,8 +74,8 @@ class Searchdropdown extends Component {
       <div
         key={option.value}
         className={optionClass}
-        onMouseDown={event => {event.stopPropagation(); this.setValue(option)}}
-        onClick={event => {event.stopPropagation(); this.setValue(option)}}>
+        onMouseDown={event => {event.stopPropagation(); this.setValue(option); this.addValueToList(option)}}
+        onClick={event => {event.stopPropagation(); this.setValue(option); this.addValueToList(option)}}>
         {option.label}
       </div>
     )
